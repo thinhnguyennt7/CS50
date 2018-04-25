@@ -1,0 +1,127 @@
+ Browers are like clients and out there are sever that serving up the content and information.
+
+ prefix 'www' is just the mean telling that is the website/
+
+ http://
+ https://  are more secure, encrypted.
+
+https://www.facebook.com/
+    + The slash at the end is telling that is the root of the default homepage or something else
+
+HTTP: is a protocol; it sis the set of conventions that dictate how a computer client, talk to a the web server. For example such as sending the message from clients to server.
+
+    The message while sending from clients to server basiclly:
+        GET / HTTP/1.1
+        host : www.facebook.com
+        .....
+
+    Inside the envelope
+    HTTP/1.1 200 OK
+    Content-Type: text/html
+    ....
+
+    Inside the envelope might be
+    HTTP/1.1 404 Not Found
+    Content-Type: text/html
+    ....
+* 404: The file is not found, or mistype of url
+
+Status Code:
+200 : OK
+301 : Moved Permanently
+302 : Found
+304 : Not Modified
+401 : Unauthorized
+403 : Forbidden (did not log in or not able to access)
+404 : Not Found
+418 : I'm a Teapot
+500 : Internet server error
+....
+
+CURL
+curl http://harvard.edu/
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.harvard.edu/">here</a>.</p>
+</body></html>
+
+
+
+CURL -I : Show only the header
+curl -I http://harvard.edu/
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Mon, 23 Apr 2018 10:01:04 GMT
+Content-Type: text/html; charset=iso-8859-1
+Content-Length: 232
+X-Content-Type-Options: nosniff
+Location: https://www.harvard.edu/  (move to https although we typed http. Cause the auto moved to the https more encrypted)
+Cache-Control: max-age=1209600
+Expires: Mon, 07 May 2018 10:01:04 GMT
+X-Request-ID: v-3bd887f6-46dd-11e8-ba78-0e9130c62238
+X-Varnish: 339502 32776
+Age: 68120
+Via: 1.1 varnish-v4
+X-Cache: HIT
+X-Cache-Hits: 6561
+Connection: keep-alive
+
+
+
+IP: Interner protocol (IPV4)
+Must have a unique address
+IP has 4 parts. Those values are from 0 to 255.
+The lowest : 0.0.0.0
+The highest: 255.255.255.255
+The max bit: 8 bits for 1 and 32 bits total
+
+IPV6
+8 parts: Those value are form 0 to 65,536
+the max bit: 16 bit and 128 bits totals
+2001:4860:4860:0:0:0:0:8844 <=> 2001:4860:4860::8844
+
+Private IP address:
+10.#.#.#
+172.16.#.# - 173.31.#.#
+192.168.#.#
+
+
+DHCP: Dynamic Host Configuration Protocol
+    The role is to assign IP addresses to devices
+
+DNS: Domain Name System
+    Translate domain names to IP addresses.
+
+nslookup : look up IP address for particular server name.
+
+traceroute : look the data able to send in the particular milisecond.
+
+Access Point:
+The router: the role is to connect all the devices and post back a same unique IP address exist on all devices.
+The router is an public ip address. All the devices that connect to the routers are now have private ip address.
+
+TCP: Transmission Control Protocol. a # the corespond the the server we are trying to send or recieve.
+22 SSH
+53 DNS
+80 HTTP
+443 HTPPS
+587 SMTP : Simple mail transfer protocol
+
+Example : curl - I http://harvard.edu:80/
+
+PORTS:
+When it send out to the web server, it will fill in with the random port number from 0 to 65000. That identify the unqiue port.
+
+TCP/IP: 
+    When we trying to download something like a picture from the internet. It will divided up into few different pieces. Then each of those piece will be located in different envelop
+    TCP and IP: 2 features:
+        1. IP ensure every computer on the internet that speaks this protocol has it address. So IP handles the getting on the data to some destination.
+        2. TCP: ensure or guarantess with high probability delivery that the data actually get there. One those envelopes reach to the specific destination. And resend back to where it sent out.
+
+
+
+
+
